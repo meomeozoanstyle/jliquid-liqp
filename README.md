@@ -1,4 +1,4 @@
-# Liqp - jliquid-liqp 
+# Liqp - jliquid-liqp [![Build Status/master] (https://travis-ci.org/matthiasdeck/jliquid-liqp.png?branch=master)](https://travis-ci.org/matthiasdeck/jliquid-liqp)
 
 A Java implementation of the [Liquid templating engine](http://wiki.shopify.com/Liquid) backed 
 up by an ANTLR grammar. 
