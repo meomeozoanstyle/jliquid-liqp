@@ -1,11 +1,10 @@
-# Liqp &nbsp; [![Build Status](https://travis-ci.org/bkiers/Liqp.png)](https://travis-ci.org/bkiers/Liqp)
+# Liqp - jliquid-liqp 
 
 A Java implementation of the [Liquid templating engine](http://wiki.shopify.com/Liquid) backed 
 up by an ANTLR grammar. 
 
-To use Liqp, checkout this project and create a JAR file through the `jar` task defined in the 
-Ant build file, or download a [prebuilt JAR file](https://github.com/bkiers/Liqp/raw/master/Liqp-0.6.jar)
-
+This project is a mavenized fork of [Liqp](https://github.com/bkiers/Liqp).
+    
 This library can be used in two different ways:
 
 1. to construct an AST (abstract syntax tree) of some Liquid input
