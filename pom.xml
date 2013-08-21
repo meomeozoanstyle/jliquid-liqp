@@ -6,7 +6,7 @@
     <name>jliquid-liqp</name>
     <groupId>org.jliquid</groupId>
     <artifactId>jliquid-liqp</artifactId>
-    <version>0.6-SNAPSHOT</version>
+    <version>0.6</version>
 
     <packaging>jar</packaging>
     <url>https://github.com/matthiasdeck/jliquid-liqp</url>
