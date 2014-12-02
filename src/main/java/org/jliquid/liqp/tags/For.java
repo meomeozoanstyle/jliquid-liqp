@@ -45,11 +45,17 @@ class For extends Tag {
 
         String id = super.asString(nodes[1].render(context));
 
+        //store existing for loop context if it exists, will be null otherwise. We need this for nested for loops.
+        Object originalForLoopContext = context.get(FORLOOP);
+
+        //put new forloop context for this loop
         context.put(FORLOOP, new HashMap<String, Object>());
 
         Object rendered = array ? renderArray(id, context, nodes) : renderRange(id, context, nodes);
 
+        //remove current forloop context, put back outer/parent forloop context if it exists
         context.remove(FORLOOP);
+        if(originalForLoopContext != null) context.put(FORLOOP, originalForLoopContext);
 
         return rendered;
     }
