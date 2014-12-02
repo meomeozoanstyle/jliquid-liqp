@@ -116,6 +116,13 @@ public class ForTest {
         assertThat(Template.parse("{%for item in array%}{{item}}{%endfor%}").render("{\"array\":[\"a\",\"\",\"b\",\"\",\"c\"]}"), is("abc"));
     }
 
+    @Test
+    public void forWithMapIndexAccessTest() throws RecognitionException {
+
+        assertThat(Template.parse("{%for item in map%}{{item[0]}}-{{item[1]}}{%endfor%}").render("{\"map\":{ \"key\": \"value\"} }"), is("key-value"));
+
+    }
+
     /*
      * def test_for_helpers
      *   assigns = {'array' => [1,2,3] }

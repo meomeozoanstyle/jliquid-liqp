@@ -64,7 +64,13 @@ class For extends Tag {
         int offset = attributes.get(OFFSET);
         int limit = attributes.get(LIMIT);
 
-        Object[] array = super.asArray(tokens[2].render(context));
+        Object renderedObj = tokens[2].render(context);
+        Object[] array;
+        if(renderedObj instanceof Map){
+            array = ((Map)(renderedObj)).entrySet().toArray();
+        }else{
+            array = super.asArray(renderedObj);
+        }
 
         LNode block = tokens[3];
         LNode blockIfEmptyOrNull = tokens[4];
