@@ -1,6 +1,6 @@
 package org.jliquid.liqp.filters;
 
-class Strip_Newlines extends Filter {
+class StripNewlines extends Filter {
 
     /*
      * strip_newlines(input) click to toggle source

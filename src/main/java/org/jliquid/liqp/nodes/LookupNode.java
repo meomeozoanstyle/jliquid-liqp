@@ -1,9 +1,12 @@
 package org.jliquid.liqp.nodes;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
+import com.google.common.base.CaseFormat;
 
 class LookupNode implements LNode {
 
@@ -93,7 +96,17 @@ class LookupNode implements LNode {
             if (value instanceof java.util.Map) {
                 return ((java.util.Map) value).get(hash);
             } else {
-                return null;
+            	try {
+					String fieldName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, hash);
+					Field fieldValue = value.getClass().getDeclaredField(fieldName);
+					fieldValue.setAccessible(true);
+					if (fieldValue != null)
+						return fieldValue.get(value);
+				} catch (Exception e) {
+					// Unhandle exception
+				}
+
+				return null;
             }
         }
 

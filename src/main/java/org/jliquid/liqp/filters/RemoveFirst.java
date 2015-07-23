@@ -2,7 +2,7 @@ package org.jliquid.liqp.filters;
 
 import java.util.regex.Pattern;
 
-class Remove_First extends Filter {
+class RemoveFirst extends Filter {
 
     /*
      * remove_first(input, string)

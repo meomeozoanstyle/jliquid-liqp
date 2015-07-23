@@ -1,6 +1,5 @@
 package org.jliquid.liqp;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jliquid.liqp.nodes.LNode;
 import org.jliquid.liqp.parser.LiquidLexer;
 import org.jliquid.liqp.parser.LiquidParser;
@@ -94,28 +93,6 @@ public class Template {
      */
     public static Template parse(File file) throws IOException {
         return new Template(file);
-    }
-
-    /**
-     * Renders the template.
-     *
-     * @param jsonMap a JSON-map denoting the (possibly nested) variables that
-     * can be used in this Template.
-     *
-     * @return a string denoting the rendered template.
-     */
-    @SuppressWarnings("unchecked")
-    public String render(String jsonMap) {
-
-        Map<String, Object> map;
-
-        try {
-            map = new ObjectMapper().readValue(jsonMap, HashMap.class);
-        } catch (Exception e) {
-            throw new RuntimeException("invalid json map: '" + jsonMap + "'", e);
-        }
-
-        return render(map);
     }
 
     /**

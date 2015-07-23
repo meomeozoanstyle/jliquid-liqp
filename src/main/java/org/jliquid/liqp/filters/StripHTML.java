@@ -2,7 +2,7 @@ package org.jliquid.liqp.filters;
 
 import org.jsoup.Jsoup;
 
-class Strip_HTML extends Filter {
+class StripHTML extends Filter {
 
     /*
      * strip_html(input)

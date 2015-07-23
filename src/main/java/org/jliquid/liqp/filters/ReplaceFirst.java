@@ -3,7 +3,7 @@ package org.jliquid.liqp.filters;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class Replace_First extends Filter {
+class ReplaceFirst extends Filter {
 
     /*
      * replace_first(input, string, replacement = '')
